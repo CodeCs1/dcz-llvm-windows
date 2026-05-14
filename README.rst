@@ -14,10 +14,13 @@ Releases
 		- Clang
 		- Remarks
 
+	*   - 2026-04-05
+		- `LLVM 22.1.5 <>`
+		- Latest LLVM version (without clang repository)
+
 	*	- 2025-09-10
 		- `LLVM 21.1.1 <https://github.com/vovkos/llvm-package-windows/releases/llvm-21.1.1>`_
 		- `Clang 21.1.1 <https://github.com/vovkos/llvm-package-windows/releases/clang-21.1.1>`_
-		- The latest official LLVM release
 
 	*	- 2025-07-09
 		- `LLVM 20.1.8 <https://github.com/vovkos/llvm-package-windows/releases/llvm-20.1.8>`_

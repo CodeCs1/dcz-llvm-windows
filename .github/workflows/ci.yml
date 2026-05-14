@@ -7,11 +7,10 @@ on:
 jobs:
     windowsBuild:
         name: Windows Build
-        runs-on: windows-2022
+        runs-on: windows-latest
         env:
-            BUILD_PROJECT: clang
-            BUILD_MASTER: false
             LLVM_VERSION: 22.1.5
+            LLVM_MAJOR_VERSION: 22
 
         strategy:
             fail-fast: false
@@ -21,7 +20,6 @@ jobs:
                 -   libcmt
 
                 TARGET_CPU:
-                -   x86
                 -   amd64
 
                 CONFIGURATION:
@@ -30,7 +28,7 @@ jobs:
 
         steps:
         -   name: Checkout repo
-            uses: actions/checkout@v3
+            uses: actions/checkout@v2
 
         -   name: Install
             shell: cmd
@@ -49,7 +47,5 @@ jobs:
         -   name: Release
             uses: softprops/action-gh-release@v1
             if: startsWith(github.ref, 'refs/tags/')
-            env:
-                GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
             with:
                 files: ${{steps.BUILD.outputs.DEPLOY_FILE}}
