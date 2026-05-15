@@ -4,6 +4,9 @@ on:
 -   push
 -   pull_request
 
+permissions:
+  contents: write
+
 jobs:
     windowsBuild:
         name: Windows Build
@@ -45,7 +48,7 @@ jobs:
                 echo ::set-output name=DEPLOY_FILE::%DEPLOY_FILE%
 
         -   name: Release
-            uses: softprops/action-gh-release@v1
+            uses: softprops/action-gh-release@v3.0.0
             if: startsWith(github.ref, 'refs/tags/')
             with:
                 files: ${{steps.BUILD.outputs.DEPLOY_FILE}}

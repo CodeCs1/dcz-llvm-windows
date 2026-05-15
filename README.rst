@@ -15,7 +15,7 @@ Releases
 		- Remarks
 
 	*   - 2026-04-05
-		- `LLVM 22.1.5 <>`
+		- `LLVM 22.1.5 <https://github.com/CodeCs1/dcz-llvm-windows/releases/llvm-22.1.5>`
 		- Latest LLVM version (without clang repository)
 
 	*	- 2025-09-10
